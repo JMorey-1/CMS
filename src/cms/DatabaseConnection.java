@@ -2,6 +2,10 @@ package cms;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 
 public class DatabaseConnection {
     
@@ -32,6 +36,17 @@ public class DatabaseConnection {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+    
+      public ResultSet executeQuery(String query) {
+        try {
+            Statement statement = connection.createStatement();
+            return statement.executeQuery(query);
+        } catch (SQLException e) {
+            System.out.println("Failed to execute query: " + query);
+            e.printStackTrace();
+            return null;
         }
     }
 
