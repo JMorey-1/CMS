@@ -29,7 +29,11 @@ public class Admin extends User {
     
     
     //methods specific to Admin
-    
+      //The only user available at the start
+      //Username: admin■ Password: java
+      //Can add, modify and delete other users (including username, password and role)
+      // Can change their own username and password
+       //Cannot generate reports
     
     
 }
