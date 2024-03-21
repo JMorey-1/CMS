@@ -10,15 +10,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
 
- * @author jamie
- */
 public class CMS {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
 
         // Initialize database connector

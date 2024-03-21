@@ -21,5 +21,6 @@ public class Lecturer extends User {
     
     
     //methods specific to lecturer
-    
+    // Can generate a Lecturer Report for themselves
+    //Can change their own username and password
 }
