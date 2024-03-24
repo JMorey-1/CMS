@@ -50,10 +50,9 @@ public class User {
         this.password = newPassword;
     }
     
-    // Method generate report
-    public void generateReport() {
+ 
       
     }
-}
+
     
 

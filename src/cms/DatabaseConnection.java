@@ -59,6 +59,11 @@ public class DatabaseConnection {
         }
     }
     
+     public PreparedStatement prepareStatement(String query) throws SQLException {
+        return connection.prepareStatement(query);
+    }
+
+    
      public Connection establishConnection() {
         return connection;
     }

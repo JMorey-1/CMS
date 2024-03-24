@@ -18,14 +18,28 @@ public class CMS {
         // Initialize database connector
         DatabaseConnection databaseConnection = new DatabaseConnection();
 
+        DatabaseConnection dbConnection = new DatabaseConnection();
+        Admin admin = new Admin("admin", "java", "admin", dbConnection);
+        
         // Test database connection
         databaseConnection.testConnection();
 
+           // Create a DatabaseConnection object
+        DatabaseConnection connection = new DatabaseConnection();
+
+
+        // Call the createOfficeUser method with sample username and password
+        admin.createOfficeUser("Ruby", "puppy");
+
+        // Close the database connection
+        connection.closeConnection();
+    }
+        
         // Create instance of ReportCreator
-        ReportCreator reportCreator = new ReportCreator(databaseConnection, null);
+        //ReportCreator reportCreator = new ReportCreator(databaseConnection, null);
 
         // Generate the report
-        String lecturerReport = reportCreator.generateLecturerReport(1);
+        //String lecturerReport = reportCreator.generateLecturerReport(1);
         
         //Currently manually passing lecturerid to this method
         //Will be entered by user later
@@ -34,8 +48,8 @@ public class CMS {
          //reportCreator.generateLecturerReport(50);
          
          // Initialize FileOutput object
-        FileOutput fileOutput = new FileOutput();
-        fileOutput.outputReport(lecturerReport, "course_report", "txt");
+        //FileOutput fileOutput = new FileOutput();
+       // fileOutput.outputReport(lecturerReport, "course_report", "txt");
         
         
        
@@ -56,7 +70,7 @@ public class CMS {
         //fileOutput.outputReport(reportContent, "console", null);
     }
         
-    }
+    
 
     
     
