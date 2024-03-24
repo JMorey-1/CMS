@@ -25,7 +25,7 @@ public class CMS {
         ReportCreator reportCreator = new ReportCreator(databaseConnection, null);
 
         // Generate the report
-        String courseReport = reportCreator.generateCourseReport();
+        String lecturerReport = reportCreator.generateLecturerReport(1);
         
         //Currently manually passing lecturerid to this method
         //Will be entered by user later
@@ -35,8 +35,8 @@ public class CMS {
          
          // Initialize FileOutput object
         FileOutput fileOutput = new FileOutput();
-        fileOutput.outputReport(courseReport, "course_report", "txt");
-
+        fileOutput.outputReport(lecturerReport, "course_report", "txt");
+        
         
        
         

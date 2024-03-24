@@ -33,11 +33,13 @@ public String generateCourseReport() {
                 "INNER JOIN lecturers l ON m.lecturer_id = l.lecturer_id " +
                 "GROUP BY m.module_name, c.course_name, lecturer_name, room_assignment";
 
+
         try (PreparedStatement statement = connection.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
 
             reportContent.append("Course Report:\n\n");
-            reportContent.append("Module Name\tProgram\tStudents Enrolled\tLecturer\tRoom\n");
+            reportContent.append(String.format("%-65s %-50s %-20s %-20s %-10s\n",
+                    "Module Name", "Program", "Students Enrolled", "Lecturer", "Room"));
 
             while (resultSet.next()) {
                 String moduleName = resultSet.getString("module_name");
@@ -46,11 +48,8 @@ public String generateCourseReport() {
                 String lecturerName = resultSet.getString("lecturer_name");
                 String roomAssignment = resultSet.getString("room_assignment");
 
-                reportContent.append(moduleName).append("\t");
-                reportContent.append(programName).append("\t");
-                reportContent.append(numStudents).append("\t");
-                reportContent.append(lecturerName).append("\t");
-                reportContent.append(roomAssignment).append("\n");
+                reportContent.append(String.format("%-65s %-50s %-20d %-20s %-10s\n",
+                        moduleName, programName, numStudents, lecturerName, roomAssignment));
             }
         }
     } catch (SQLException e) {
@@ -58,21 +57,27 @@ public String generateCourseReport() {
     }
     return reportContent.toString();
 }
+
+
 public String generateStudentReport(int studentId) {
     StringBuilder reportContent = new StringBuilder();
     try (Connection connection = dbConnector.establishConnection()) {
         // SQL query to fetch student report data
-        String query = "SELECT s.student_firstname, s.student_lastname, s.student_number, c.course_name AS program_name, " +
-                       "GROUP_CONCAT(DISTINCT m.module_name) AS enrolled_modules, " +
-                       "GROUP_CONCAT(DISTINCT CONCAT(m.module_name, ' (Grade: ', g.student_grade, ')')) AS completed_modules, " +
-                       "GROUP_CONCAT(DISTINCT CONCAT(m.module_name, ' (Grade: ', g.student_grade, ')')) AS modules_to_repeat " +
-                       "FROM students s " +
-                       "INNER JOIN enrolments e ON s.student_id = e.student_id " +
-                       "INNER JOIN modules m ON e.module_id = m.module_id " +
-                       "INNER JOIN courses c ON m.course_id = c.course_id " +
-                       "LEFT JOIN grades g ON s.student_id = g.student_id AND m.module_id = g.module_id " +
-                       "WHERE s.student_id = ? " +
-                       "GROUP BY s.student_firstname, s.student_lastname, s.student_number, program_name";
+      String query = "SELECT s.student_firstname, s.student_lastname, s.student_number, c.course_name AS program_name, " +
+               "GROUP_CONCAT(DISTINCT m.module_name) AS enrolled_modules, " +
+               "GROUP_CONCAT(DISTINCT CONCAT(m.module_name, ' (Grade: ', g.student_grade, ')')) AS completed_modules, " +
+               "CASE WHEN g.module_to_be_repeated = 'false' THEN 'None' ELSE m.module_name END AS modules_to_repeat " +
+               "FROM students s " +
+               "INNER JOIN enrolments e ON s.student_id = e.student_id " +
+               "INNER JOIN modules m ON e.module_id = m.module_id " +
+               "INNER JOIN courses c ON m.course_id = c.course_id " +
+               "LEFT JOIN grades g ON s.student_id = g.student_id AND m.module_id = g.module_id " +
+               "WHERE s.student_id = ? " +
+               "GROUP BY s.student_firstname, s.student_lastname, s.student_number, program_name, modules_to_repeat";
+
+
+
+
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             // Set the student ID parameter
@@ -107,6 +112,7 @@ public String generateStudentReport(int studentId) {
     }
     return reportContent.toString();
 }
+
 
 public String generateLecturerReport(int lecturerId) {
     StringBuilder reportContent = new StringBuilder();
