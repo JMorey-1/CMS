@@ -1,0 +1,303 @@
+Course Report:
+
+Module Name	Program	Students Enrolled	Lecturer	Room
+19th Century American Literature	American Literature	3	Stephen Guye	Room B
+Acting Techniques and Production	Introduction to Theater Arts	3	Hiram Hansom	Room A
+Adobe Creative Suite Applications	Graphic Design	3	Frank Arndell	Room A
+Adolescence and Identity Formation	Developmental Psychology	3	John Dovidaitis	Room B
+Adulthood and Aging	Developmental Psychology	3	Arda Stelli	Room B
+Aerodynamics and Flight Mechanics	Introduction to Aerospace Engineering	3	Mark Millberg	Room A
+Aggregate Demand and Supply	Macroeconomics	3	Michal McPaik	Room D
+Air and Water Pollution Control	Introduction to Environmental Engineering	3	Hugh Kinforth	Room A
+Ancient Egyptian Civilization	World History: Ancient Civilizations	3	Miran Kislingbury	Room B
+Animal Anatomy and Physiology	Introduction to Animal Science	3	Owen Krollmann	Room A
+Animal Nutrition and Health	Introduction to Animal Science	3	Gwen Benzie	Room A
+Applications of Differentiation	Calculus I	3	Salim Matus	Online
+Applications of Genetic Engineering	Introduction to Genetic Engineering	3	Sarah Bonhill	Room A
+Applications of Nanotechnology	Introduction to Nanotechnology	3	Anna Allenby	Online
+Archaeology	Introduction to Anthropology	3	Betti Sharman	Room A
+Argumentative Writing	English Composition	3	George Nowakowski	Room A
+Assessment and Diagnosis in Clinical Practice	Introduction to Clinical Psychology	3	Jody Eaglen	Room B
+Atomic Structure and Bonding	Introduction to Materials Science	3	Carley Welldrake	Room C
+Atomic Structure and Periodicity	Introduction to Inorganic Chemistry	3	Gav Mishaw	Room X
+Attitudes and Persuasion	Social Psychology	3	Raf Aizic	Room D
+Basic Concepts of Chemistry	Fundamentals of Chemistry	3	Ema Nicholls	Room D
+Basics of Drug Action and Pharmacokinetics	Introduction to Pharmacology	3	Cammy Foy	Room A
+Basics of Human Nutrition	Introduction to Nutrition	3	Kristine Hagley	Room A
+Basics of Linguistic Analysis	Introduction to Linguistics	3	Hugh Kinforth	Room B
+Basics of the Immune System	Introduction to Immunology	3	Adam Ronaghan	Room C
+Biological Databases and Sequence Analysis	Introduction to Bioinformatics	3	Rafaelita Yakunikov	Room B
+Biomaterials and Tissue Engineering	Introduction to Biomedical Engineering	3	Ema Nicholls	Room A
+Biomedical Imaging and Instrumentation	Introduction to Biomedical Engineering	3	Christoper Leah	Room A
+Biomolecular Structure and Function	Introduction to Molecular Biology	3	Ludwig Wombwell	Room B
+Biopsychosocial Model of Health	Introduction to Health Psychology	3	Jennifer Trevers	Room B
+Cell Biology	Principles of Biology	3	Anna Allenby	Room E
+Cellular Structure and Function	Human Anatomy and Physiology	3	Arda Stelli	Room B
+Chemical Bonding and Molecular Structure	Introduction to Inorganic Chemistry	3	Tom Sherebrooke	Room X
+Chemical Reactions	Fundamentals of Chemistry	3	Estelle Sunock	Room D
+Chemical Thermodynamics	Introduction to Chemical Engineering	3	Pearl Pountain	Room D
+Christianity, Judaism, and Islam	World Religions	3	Emma Hrachovec	Online
+Circuit Analysis and Electronics	Introduction to Electrical Engineering	3	Sinead Pablos	Online
+Classical and Historical Archaeology	Introduction to Archaeology	3	Lacy McKeand	Room A
+Classical Greek Civilization	World History: Ancient Civilizations	3	Merle Wilton	Room B
+Colonial and Early American Literature	American Literature	3	Althea Zecchi	Room B
+Comparative Health Policy Studies	Introduction to Health Policy	3	Amy Balloch	Room A
+Comparative Politics and Governance	Introduction to Political Science	3	Meggi Liccardi	Room D 
+Composition and Lighting	Digital Photography	3	Sheppard Hamley	Online
+Computational Genomics and Proteomics	Introduction to Computational Biology	3	Alice Monte	Room A
+Computer Systems and Architecture	Introduction to Computer Science	3	Jacquelyn Hollyman	Room A
+Consumer Theory and Demand	Microeconomics	3	Lilllie Apthorpe	Room B
+Coordination Chemistry and Transition Metals	Introduction to Inorganic Chemistry	3	Orran Albutt	Room X
+Coping and Adaptation to Illness	Introduction to Health Psychology	3	Mark Millberg	Room B
+Corporate Social Responsibility	Business Ethics	3	Sigfried O'Farris	Room B
+Criminal Justice System and Crime Prevention	Introduction to Criminology	3	Kevin Bream	Room B
+Crystal Structure and Defects	Introduction to Materials Science	3	Salim Matus	Room C
+Cultural Analysis and Critique	Introduction to Cultural Studies	3	Ludwig Wombwell	Room B
+Cultural Anthropology	Introduction to Anthropology	3	Lonna Wegener	Room A
+Cultural Diversity and Globalization	Cultural Anthropology	3	Jody Eaglen	Room E
+Culture and Identity	Introduction to Cultural Studies	3	Sarah Bonhill	Room B
+Culture, Illness, and Healing	Introduction to Medical Anthropology	3	Moll Fanning	Room C
+Curriculum Development and Instructional Strategies	Introduction to Education	3	Michal McPaik	Room A
+Cyber Threats and Risk Management	Introduction to Cybersecurity	3	Maren Hamfleet	Room A
+Data Structures and Algorithms	Introduction to Computer Science	3	Ludwig Wombwell	Room A
+Delivery Techniques and Audience Analysis	Public Speaking	3	Phillis Renoden	Room A
+Descriptive Statistics and Data Visualization	Statistics	3	Amy Balloch	Room A
+Developmental Psychology	Introduction to Psychology	3	Dennis Barkshire	Room A
+Differentiation	Calculus I	3	Carley Welldrake	Online
+Digital Editing and Post-Processing	Digital Photography	3	Noreen Lattimer	Online
+DNA Replication and Gene Expression	Introduction to Molecular Biology	3	Jacquelyn Hollyman	Room B
+Drug Development and Regulation	Introduction to Pharmacology	3	Meggi Liccardi	Room A
+Eastern Religions: Hinduism, Buddhism, and Taoism	World Religions	3	Emelina Braferton	Online
+Ecology	Environmental Science	3	Pierre Allcock	Room C
+Economic Evaluation of Healthcare Interventions	Introduction to Health Economics	3	Ben Carlile	Room B
+Economic Systems and Policy	Introduction to Economics	3	Lonna Wegener	Room C
+Electromagnetic Fields and Waves	Introduction to Electrical Engineering	3	Ray Slowgrave	Online
+Electronic Health Records and Clinical Informatics	Introduction to Health Informatics	3	Emelina Braferton	Room C
+Engineering Design Process	Introduction to Engineering	3	Karen Alexandersen	Room B
+Engineering Economy and Cost Analysis	Introduction to Industrial Engineering	3	Conan Cunio	Room B
+Environmental Engineering and Water Resources	Introduction to Civil Engineering	3	Nolan Ambroisin	Online
+Environmental Justice and Sustainability	Environmental Ethics	3	Nick Finnan	Room C
+Environmental Policy and Sustainability	Environmental Science	3	Althea Zecchi	Room C
+Environmental Systems and Processes	Introduction to Environmental Engineering	3	Michal McPaik	Room A
+Epidemiological Analysis and Interpretation	Introduction to Epidemiology	3	John Dovidaitis	Room A
+Epidemiology and Disease Control	Introduction to Public Health	3	Faber Collinette	Room C
+Epistemology	Introduction to Philosophy	3	Yevette Gareth	Room D 
+Equations and Inequalities	Algebra I	3	Conan Cunio	Room F
+Ethical Decision Making in Business	Business Ethics	3	Rafaelita Yakunikov	Room B
+Ethical Issues in End-of-Life Care	Introduction to Medical Ethics	3	Raf Aizic	Room B
+Ethical Theories and Environmental Decision Making	Environmental Ethics	3	Emelita Tarbet	Room C
+Ethical Theories and Frameworks	Business Ethics	3	Alice Monte	Room B
+Ethical Theories and Principles in Medicine	Introduction to Medical Ethics	3	Arda Stelli	Room B
+Ethics	Introduction to Philosophy	3	Eva Westoff	Room D
+Evolutionary Biology	Principles of Biology	3	Christoper Leah	Room E
+Exercise Physiology and Biomechanics	Introduction to Exercise Science	3	Emelita Tarbet	Room A
+Exercise Prescription and Programming	Introduction to Exercise Science	3	Nick Finnan	Room A
+Exercise Prescription for Athletes	Introduction to Sports Medicine	3	Flori McPeck	Room B
+Fashion History and Trend Analysis	Introduction to Fashion Design	3	Cullen Spall	Room C
+Fashion Sketching and Design Principles	Introduction to Fashion Design	3	Moll Fanning	Room C
+Fiction Writing Techniques	Creative Writing	3	Beth Milburn	Room B
+Film Analysis and Criticism	Introduction to Film Studies	3	Jennifer Trevers	Room B
+Financial Accounting Basics	Principles of Accounting	3	Trevar Donavan	Room A
+Financial Statement Analysis	Principles of Accounting	3	Aleece Follis	Room A
+Fiscal and Monetary Policy	Macroeconomics	3	Hugh Kinforth	Room D 
+Food Chemistry and Analysis	Introduction to Food Science	3	Meade Le Merchant	Room B
+Food Microbiology and Safety	Introduction to Food Science	3	Ben Carlile	Room B
+Food Processing and Technology	Introduction to Food Science	3	Karen Alexandersen	Room B
+Forensic Biology and DNA Analysis	Forensic Science	3	Maxy Hourahan	Room D
+Forensic Chemistry and Toxicology	Forensic Science	3	Emma Hrachovec	Room D 
+Forest Ecology and Conservation	Introduction to Forestry	3	Phillis Renoden	Room G
+Forest Management Practices	Introduction to Forestry	3	Yancey Foucard	Room G
+Forest Policy and Economics	Introduction to Forestry	3	Beth Milburn	Room G
+Foundations of Clinical Psychology	Introduction to Clinical Psychology	3	Lennie Caldwall	Room B
+Foundations of Cultural Studies	Introduction to Cultural Studies	3	Noreen Lattimer	Room B
+Foundations of Education	Introduction to Education	3	Lilllie Apthorpe	Room A
+Foundations of Political Science	Introduction to Political Science	3	Raf Aizic	Room D
+Foundations of Public Speaking	Public Speaking	3	Lane Daburn	Room A
+French Literary History	French Literature	3	Sigfried O'Farris	Room D
+French Literary Movements	French Literature	3	Julia Dearn	Room D 
+Functional Groups and Reaction Mechanisms	Introduction to Organic Chemistry	3	Yevette Gareth	Room B
+Fundamentals of Business Management	Introduction to Business Management	3	Jordon Buckby	Room C
+Fundamentals of Cybersecurity	Introduction to Cybersecurity	3	Salim Matus	Room A
+Fundamentals of Music Theory	Introduction to Music Theory	3	Pearl Pountain	Room B
+Fundamentals of Public Health	Introduction to Public Health	3	Margot Philcott	Room C
+Fundamentals of Robotics	Introduction to Robotics	3	Flori McPeck	Room D
+Gene Cloning and Expression Systems	Introduction to Genetic Engineering	3	Noreen Lattimer	Room A
+Genetic Engineering and Biomedical Applications	Biotechnology	3	Lane Daburn	Online
+Genetics	Principles of Biology	3	Ruthie Esmonde	Room E
+Genome Assembly and Annotation	Introduction to Bioinformatics	3	Giselle Miquelet	Room B
+Genre Studies and Filmmaking Techniques	Introduction to Film Studies	3	Tamma Cranidge	Room B
+Geologic Time and Earth's History	Physical Geology	3	Estelle Sunock	Room B
+Global Governance and Institutions	Introduction to International Relations	3	Elizabet McGee	Room A
+Global Health Challenges and Determinants	Introduction to Global Health	3	Beth Milburn	Room B
+Global Health Governance and Policy	Introduction to Global Health	3	Sean Hearle	Room B
+Global Health Interventions and Programs	Introduction to Global Health	3	Jordon Buckby	Room B
+Group Dynamics and Social Influence	Social Psychology	3	Cammy Foy	Room D
+Harmony and Chord Progressions	Introduction to Music Theory	3	Paul Langsbury	Room B
+Health Behavior Change Theories	Introduction to Health Psychology	3	Tamma Cranidge	Room B
+Health Benefits of Physical Activity	Introduction to Exercise Science	3	Kristine Hagley	Room A
+Health Data Analytics and Decision Support Systems	Introduction to Health Informatics	3	Lane Daburn	Room C
+Health Policy Analysis and Evaluation	Introduction to Health Policy	3	Owen Krollmann	Room A
+Health Policy and Global Health Issues	Introduction to Public Health	3	Miran Kislingbury	Room C
+Health Policy Formation and Implementation	Introduction to Health Policy	3	Danie Gabe	Room A
+Healthcare Finance and Budgeting	Introduction to Healthcare Management	3	Phillis Renoden	Room A
+Healthcare Financing and Payment Systems	Introduction to Health Economics	3	Meade Le Merchant	Room B
+Healthcare Organizations and Management Structures	Introduction to Healthcare Management	3	Kane Di Bartolommeo	Room A
+Healthcare Systems and Social Inequality	Introduction to Medical Sociology	3	Bert Simenon	Room A
+History and Evolution of Cinema	Introduction to Film Studies	3	Bert Simenon	Room B
+History and Evolution of Theater	Introduction to Theater Arts	3	Merle Wilton	Room A
+Horticultural Crop Production	Introduction to Horticulture	3	Jordon Buckby	Online
+HR Planning and Recruitment	Human Resource Management	3	George Nowakowski	Room B
+HTML and CSS Fundamentals	Web Design and Development	3	Con Dunridge	Room D
+Immunological Disorders and Diseases	Introduction to Immunology	3	Trevar Donavan	Room C
+Immunological Techniques and Methods	Introduction to Immunology	3	Ariana Inold	Room C
+Industrial and Environmental Biotechnology	Biotechnology	3	Kane Di Bartolommeo	Online
+Informed Consent and Patient Autonomy	Introduction to Medical Ethics	3	Dorie Toxell	Room B
+International Conflict and Cooperation	Introduction to International Relations	3	Pierre Allcock	Room A
+Interpersonal Communication	Introduction to Communication Studies	3	Giselle Miquelet	Room A
+Introduction to Aerospace Systems	Introduction to Aerospace Engineering	3	Tamma Cranidge	Room A
+Introduction to Algebraic Expressions	Algebra I	3	Christoper Moran	Room F
+Introduction to Anthropological Approaches in Medicine	Introduction to Medical Anthropology	3	Karen Alexandersen	Room C
+Introduction to Anthropology	Introduction to Anthropology	3	Orran Albutt	Room A
+Introduction to Bioinformatics Tools	Introduction to Computational Biology	3	Kathryne Rehm	Room A
+Introduction to Biomechanics	Introduction to Biomedical Engineering	3	Ruthie Esmonde	Room A
+Introduction to Biotechnology	Biotechnology	3	Emelina Braferton	Online
+Introduction to Chemical Processes	Introduction to Chemical Engineering	3	Hiram Hansom	Room D
+Introduction to Creative Writing	Creative Writing	3	Yancey Foucard	Room B
+Introduction to Cultural Anthropology	Cultural Anthropology	3	Tonye Doy	Room E
+Introduction to Earth's Structure and Composition	Physical Geology	3	Christoper Leah	Room B
+Introduction to Environmental Ethics	Environmental Ethics	3	Mark Millberg	Room C
+Introduction to Environmental Science	Environmental Science	3	Elizabet McGee	Room C
+Introduction to Forensic Science	Forensic Science	3	Jody Eaglen	Room D
+Introduction to Health Information Systems	Introduction to Health Informatics	3	Emma Hrachovec	Room C
+Introduction to Human Body Systems	Human Anatomy and Physiology	3	John Dovidaitis	Room B
+Introduction to Materials Science and Engineering	Introduction to Engineering	3	Moll Fanning	Room B
+Introduction to Media Studies	Media Studies	3	Denney Waller-Bridge	Room C
+Introduction to Nanomaterials	Introduction to Nanotechnology	3	Kevin Bream	Online
+Introduction to Philosophical Inquiry	Introduction to Philosophy	3	Blanch Antoniutti	Room D
+Introduction to Programming	Introduction to Computer Science	3	Sarah Bonhill	Room A
+Introduction to Psychology	Introduction to Psychology	3	Gillian Dufty	Room A
+Introduction to Psychopathology	Abnormal Psychology	3	Meggi Liccardi	Online
+Introduction to Sociological Perspectives on Health and Illness	Introduction to Medical Sociology	3	Cullen Spall	Room A
+Introduction to Sociology	Introduction to Sociology	3	Nolan Ambroisin	Online
+Introduction to Structural Engineering	Introduction to Civil Engineering	3	Miran Kislingbury	Online
+Introduction to World Religions	World Religions	3	Maxy Hourahan	Online
+JavaScript Programming	Web Design and Development	3	Adam Ronaghan	Room D
+Landscape Design and Management	Introduction to Horticulture	3	Danie Gabe	Online
+Learning Theories and Educational Psychology	Introduction to Education	3	Ray Slowgrave	Room A
+Limits and Continuity	Calculus I	3	Fred Black	Online
+Livestock Production and Management	Introduction to Animal Science	3	Amy Balloch	Room A
+Macroeconomic Indicators	Macroeconomics	3	Ray Slowgrave	Room D
+Macroeconomics Principles	Introduction to Economics	3	Orran Albutt	Room C
+Macronutrients and Micronutrients	Introduction to Nutrition	3	Natalie De la Eglise	Room A
+Major French Authors	French Literature	3	Rafaelita Yakunikov	Room D
+Managerial Accounting	Principles of Accounting	3	Lacy McKeand	Room A
+Market Research and Analysis	Principles of Marketing	3	Gav Mishaw	Online
+Market Structures	Microeconomics	3	Sinead Pablos	Room B
+Marketing Fundamentals	Principles of Marketing	3	Stephen Guye	Online
+Marketing Strategy	Principles of Marketing	3	Tom Sherebrooke	Online
+Mass Communication and Media Studies	Introduction to Communication Studies	3	Sheppard Hamley	Room A
+Materials and Finishes in Interior Design	Introduction to Interior Design	3	Jennifer Trevers	Online
+Mechanical Design and Analysis	Introduction to Mechanical Engineering	3	Faber Collinette	Room B
+Mechanical Properties of Materials	Introduction to Materials Science	3	Theodor Frontczak	Room C
+Media Effects and Cultural Studies	Media Studies	3	Carley Welldrake	Room C
+Media Institutions and Industries	Media Studies	3	Fred Black	Room C
+Medical Pluralism and Healthcare Systems	Introduction to Medical Anthropology	3	Conor Inett	Room C
+Medieval and Renaissance Art	Introduction to Art History	3	Ignazio Wallworth	Room A
+Mesopotamian Civilization	World History: Ancient Civilizations	3	Faber Collinette	Room B
+Methods and Approaches in Anthropology	Cultural Anthropology	3	Lennie Caldwall	Room E
+Methods and Techniques in Archaeology	Introduction to Archaeology	3	Ariana Inold	Room A
+Microeconomic Theory	Microeconomics	3	Paul Langsbury	Room B
+Microeconomics Principles	Introduction to Economics	3	Tom Sherebrooke	Room C
+Modern and Contemporary American Literature	American Literature	3	Gav Mishaw	Room B
+Modern and Contemporary Art	Introduction to Art History	3	Kathryne Rehm	Room A
+Molecular Structure and Spectroscopy	Introduction to Physical Chemistry	3	Stephen Guye	Room A
+Mood Disorders and Anxiety Disorders	Abnormal Psychology	3	Tonye Doy	Online
+Musculoskeletal System and Movement	Human Anatomy and Physiology	3	Dorie Toxell	Room B
+Musical Form and Analysis	Introduction to Music Theory	3	Sinead Pablos	Room B
+Nanofabrication Techniques	Introduction to Nanotechnology	3	Dennis Barkshire	Online
+Network Security and Cryptography	Introduction to Cybersecurity	3	Theodor Frontczak	Room A
+Nutrition and Health	Introduction to Nutrition	3	Flori McPeck	Room A
+Observational Astronomy and the Night Sky	Introduction to Astronomy	3	Dennis Barkshire	Room A
+Organic Chemistry Basics	Fundamentals of Chemistry	3	Margot Philcott	Room D 
+Organizational Behavior and Leadership	Introduction to Business Management	3	Danie Gabe	Room C
+Overview of Engineering Disciplines	Introduction to Engineering	3	Ben Carlile	Room B
+Overview of Renewable Energy Sources	Introduction to Renewable Energy	3	Nick Finnan	Online
+Performance Management and Compensation	Human Resource Management	3	Eva Westoff	Room B
+Personality Disorders and Psychotic Disorders	Abnormal Psychology	3	Lennie Caldwall	Online
+Pharmacotherapy and Clinical Applications	Introduction to Pharmacology	3	Tonye Doy	Room A
+Phonetics and Phonology	Introduction to Linguistics	3	Christoper Moran	Room B
+Photography Basics	Digital Photography	3	Giselle Miquelet	Online
+Plant Biology and Physiology	Introduction to Horticulture	3	Sean Hearle	Online
+Plate Tectonics and Earthquakes	Physical Geology	3	Ema Nicholls	Room B
+Poetry and Creative Nonfiction	Creative Writing	3	Sean Hearle	Room B
+Political Ideologies and Theories	Introduction to Political Science	3	Cammy Foy	Room D
+Polymer Characterization	Introduction to Polymer Science	3	Betti Sharman	Room C
+Polymer Properties and Applications	Introduction to Polymer Science	3	Ignazio Wallworth	Room C
+Polymerization Techniques	Introduction to Polymer Science	3	Lonna Wegener	Room C
+Polynomials and Factoring	Algebra I	3	Denney Waller-Bridge	Room F
+Prehistoric and Ancient Art	Introduction to Art History	3	Betti Sharman	Room A
+Prehistoric Archaeology	Introduction to Archaeology	3	Trevar Donavan	Room A
+Prenatal and Early Childhood Development	Developmental Psychology	3	Aleece Follis	Room B
+Principles of Epidemiology	Introduction to Epidemiology	3	Lacy McKeand	Room A
+Principles of Graphic Design	Graphic Design	3	Conor Inett	Room A
+Principles of Health Economics	Introduction to Health Economics	3	Gwen Benzie	Room B
+Principles of Interior Design	Introduction to Interior Design	3	Frank Arndell	Online
+Probability Distributions and Hypothesis Testing	Statistics	3	Gwen Benzie	Room A
+Production and Operations Management	Introduction to Industrial Engineering	3	Denney Waller-Bridge	Room B
+Protein Structure Prediction and Modeling	Introduction to Bioinformatics	3	Julia Dearn	Room B
+Psychotherapeutic Interventions and Treatment Modalities	Introduction to Clinical Psychology	3	Maxy Hourahan	Room B
+Quality Control and Six Sigma	Introduction to Industrial Engineering	3	Fred Black	Room B
+Quality Improvement and Patient Safety in Healthcare	Introduction to Healthcare Management	3	Yancey Foucard	Room A
+Quantum Chemistry	Introduction to Physical Chemistry	3	Althea Zecchi	Room A
+Quantum Mechanical Principles in Chemistry	Introduction to Quantum Mechanics	3	Blanch Antoniutti	Room A
+Quantum States and Operators	Introduction to Quantum Mechanics	3	George Nowakowski	Room A
+Quantum Theory and Wave Mechanics	Introduction to Quantum Mechanics	3	Maren Hamfleet	Room A
+Reaction Engineering and Kinetics	Introduction to Chemical Engineering	3	Paul Langsbury	Room D 
+Recombinant DNA Technology	Introduction to Genetic Engineering	3	Sheppard Hamley	Room A
+Regression Analysis and Correlation	Statistics	3	Meade Le Merchant	Room A
+Regulation of Gene Expression	Introduction to Molecular Biology	3	Con Dunridge	Room B
+Responsive Web Design	Web Design and Development	3	Ariana Inold	Room D 
+Rhetorical Analysis	English Composition	3	Maren Hamfleet	Room A
+Robot Control and Programming	Introduction to Robotics	3	Gillian Dufty	Room D 
+Robot Kinematics and Dynamics	Introduction to Robotics	3	Forester Mynett	Room D
+Signals and Systems	Introduction to Electrical Engineering	3	Lilllie Apthorpe	Online
+Social Cognition and Perception	Social Psychology	3	Dorie Toxell	Room D
+Social Determinants of Health	Introduction to Medical Sociology	3	Frank Arndell	Room A
+Social Psychology	Introduction to Psychology	3	Kevin Bream	Room A
+Social Stratification and Inequality	Introduction to Sociology	3	Pearl Pountain	Online
+Sociological Research Methods	Introduction to Sociology	3	Hiram Hansom	Online
+Solar Energy Technology	Introduction to Renewable Energy	3	Kristine Hagley	Online
+Space Planning and Layout	Introduction to Interior Design	3	Bert Simenon	Online
+Spacecraft Design and Orbital Mechanics	Introduction to Aerospace Engineering	3	Emelita Tarbet	Room A
+Spanish Conversation	Spanish Language and Culture	3	Kathryne Rehm	Room B
+Spanish Grammar	Spanish Language and Culture	3	Ignazio Wallworth	Room B
+Spanish Literature	Spanish Language and Culture	3	Alice Monte	Room B
+Speech Organization and Structure	Public Speaking	3	Kane Di Bartolommeo	Room A
+Sports Injury Prevention and Rehabilitation	Introduction to Sports Medicine	3	Natalie De la Eglise	Room B
+Sports Nutrition and Performance Enhancement	Introduction to Sports Medicine	3	Forester Mynett	Room B
+Stars, Galaxies, and Cosmology	Introduction to Astronomy	3	Ruthie Esmonde	Room A
+Statics and Dynamics	Introduction to Mechanical Engineering	3	Estelle Sunock	Room B
+Stereochemistry and Organic Synthesis	Introduction to Organic Chemistry	3	Elizabet McGee	Room B
+Strategic Planning and Decision Making	Introduction to Business Management	3	Owen Krollmann	Room C
+Structure and Bonding in Organic Compounds	Introduction to Organic Chemistry	3	Eva Westoff	Room B
+Study Designs in Epidemiological Research	Introduction to Epidemiology	3	Aleece Follis	Room A
+Sustainable Development and Environmental Management	Introduction to Environmental Engineering	3	Christoper Moran	Room A
+Sustainable Urban Development	Introduction to Urban Planning	3	Adam Ronaghan	Room C
+Syntax and Semantics	Introduction to Linguistics	3	Conan Cunio	Room B
+Systems Biology and Modeling	Introduction to Computational Biology	3	Sigfried O'Farris	Room A
+Textiles and Fabrication Techniques	Introduction to Fashion Design	3	Conor Inett	Room C
+The Solar System and Planetary Science	Introduction to Astronomy	3	Anna Allenby	Room A
+Theatrical Genres and Styles	Introduction to Theater Arts	3	Nolan Ambroisin	Room A
+Theories of Communication	Introduction to Communication Studies	3	Julia Dearn	Room A
+Theories of Criminology	Introduction to Criminology	3	Gillian Dufty	Room B
+Theories of International Relations	Introduction to International Relations	3	Yevette Gareth	Room A
+Thermodynamics and Chemical Kinetics	Introduction to Physical Chemistry	3	Pierre Allcock	Room A
+Thermodynamics and Heat Transfer	Introduction to Mechanical Engineering	3	Margot Philcott	Room B
+Training and Development	Human Resource Management	3	Blanch Antoniutti	Room B
+Transportation Engineering	Introduction to Civil Engineering	3	Merle Wilton	Online
+Typography and Layout Design	Graphic Design	3	Cullen Spall	Room A
+Understanding Crime and Criminal Behavior	Introduction to Criminology	3	Forester Mynett	Room B
+Urban Design and Infrastructure	Introduction to Urban Planning	3	Con Dunridge	Room C
+Urbanization and City Planning	Introduction to Urban Planning	3	Jacquelyn Hollyman	Room C
+Wind Energy Technology and Wind Farms	Introduction to Renewable Energy	3	Natalie De la Eglise	Online
+Writing Process and Strategies	English Composition	3	Theodor Frontczak	Room A

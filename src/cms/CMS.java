@@ -24,16 +24,40 @@ public class CMS {
         // Create instance of ReportCreator
         ReportCreator reportCreator = new ReportCreator(databaseConnection, null);
 
-        // Generate the course report
-        //reportCreator.generateCourseReport();
+        // Generate the report
+        String courseReport = reportCreator.generateCourseReport();
         
         //Currently manually passing lecturerid to this method
         //Will be entered by user later
         //Or retrieved form logged in users account
         //reportCreator.generateStudentReport();
-         reportCreator.generateLecturerReport(50);
+         //reportCreator.generateLecturerReport(50);
+         
+         // Initialize FileOutput object
+        FileOutput fileOutput = new FileOutput();
+        fileOutput.outputReport(courseReport, "course_report", "txt");
+
+        
+       
+        
+ 
+        
+
+        // Test writing to a text file
+        //System.out.println("Writing report to text file...");
+       // fileOutput.writeTextFile(reportContent, "report_text");
+        
+              // Test writing to a CSV file
+       // System.out.println("\nWriting report to CSV file...");
+       // fileOutput.writeCSVFile(reportContent, "report_csv");
+
+        // Test outputting report to console
+       // System.out.println("\nOutputting report to console...");
+        //fileOutput.outputReport(reportContent, "console", null);
     }
-}
+        
+    }
+
     
     
 
