@@ -29,7 +29,7 @@ public class CMS {
 
 
         // Call the createOfficeUser method with sample username and password
-        admin.createOfficeUser("Ruby", "puppy");
+        admin.createLecturerUser("Ruby", "puppy");
 
         // Close the database connection
         connection.closeConnection();

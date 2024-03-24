@@ -37,12 +37,25 @@ public class Admin extends User {
     }
 
     // Method to create a lecturer user
-    public void createLecturerUser(String username, String password) {
-        Lecturer lecturer = new Lecturer(username, password, "lecturer");
-        // Logic to add the lecturer user to the system
+      public void createLecturerUser(String username, String password) {
+        try {
+            // Using hardcoded lecturers_id for testing
+            int lecturerId = 12; // Replace with the actual lecturers_id
+            String query = "UPDATE lecturers SET lecturer_username = ?, lecturer_password = ? WHERE lecturer_id = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, username);
+            statement.setString(2, password);
+            statement.setInt(3, lecturerId);
+            int rowsUpdated = statement.executeUpdate();
+            if (rowsUpdated > 0) {
+                System.out.println("New lecturer user created successfully.");
+            } else {
+                System.out.println("Failed to create new lecturer user.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error creating lecturer user: " + e.getMessage());
+        }
     }
-
-    
 
 
 
