@@ -117,7 +117,59 @@ public class ReportCreator {
 }
     
 
-    public void generateLecturerReport() {
-        // Method implementation
+public void generateLecturerReport(int lecturerId) {
+       try (Connection connection = dbConnector.establishConnection()) {
+        // SQL query to fetch lecturer report data
+        String query = "SELECT l.lecturer_firstname, l.lecturer_lastname, l.lecturer_role, " +
+               "GROUP_CONCAT(DISTINCT CASE WHEN lm.semester_id = ? THEN m.module_name END) AS taught_modules_this_semester, " +
+               "COUNT(DISTINCT CASE WHEN lm.semester_id = ? THEN e.student_id END) AS num_students, " +
+               "GROUP_CONCAT(DISTINCT m.module_name) AS all_taught_modules " +
+               "FROM lecturers l " +
+               "INNER JOIN lecturer_modules lm ON l.lecturer_id = lm.lecturer_id " +
+               "INNER JOIN modules m ON lm.module_id = m.module_id " +
+               "LEFT JOIN enrolments e ON m.module_id = e.module_id " +
+               "WHERE l.lecturer_id = ? " +
+               "GROUP BY l.lecturer_firstname, l.lecturer_lastname, l.lecturer_role";
+
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+                int currentSemesterID = 1;
+             // Set the semester ID parameter for taught_modules_this_semester
+                statement.setInt(1, currentSemesterID);
+
+                   // Set the semester ID parameter for num_students
+                  statement.setInt(2, currentSemesterID);
+                 // Set the lecturer ID parameter
+                 statement.setInt(3, lecturerId);
+
+            // Execute the query
+            try (ResultSet resultSet = statement.executeQuery()) {
+                StringBuilder reportContent = new StringBuilder();
+                reportContent.append("Lecturer Report:\n\n");
+
+                // Process the result set
+                if (resultSet.next()) {
+                    String lecturerName = resultSet.getString("lecturer_firstname") + " " + resultSet.getString("lecturer_lastname");
+                    String lecturerRole = resultSet.getString("lecturer_role");
+                    String taughtModulesThisSemester = resultSet.getString("taught_modules_this_semester");
+                    int numStudents = resultSet.getInt("num_students");
+                    String allTaughtModules = resultSet.getString("all_taught_modules");
+
+                    reportContent.append("Lecturer Name: ").append(lecturerName).append("\n");
+                    reportContent.append("Lecturer Role: ").append(lecturerRole).append("\n");
+                    reportContent.append("Modules Teaching This Semester: ").append(taughtModulesThisSemester).append("\n");
+                    reportContent.append("Number of Students: ").append(numStudents).append("\n");
+                    reportContent.append("All Modules Taught: ").append(allTaughtModules).append("\n");
+                } else {
+                    reportContent.append("No data found for the specified lecturer.");
+                }
+
+                // Print or save the report content
+                System.out.println(reportContent.toString());
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
     }
+}
 }

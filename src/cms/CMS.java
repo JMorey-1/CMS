@@ -27,8 +27,11 @@ public class CMS {
         // Generate the course report
         //reportCreator.generateCourseReport();
         
-        
-        reportCreator.generateStudentReport();
+        //Currently manually passing lecturerid to this method
+        //Will be entered by user later
+        //Or retrieved form logged in users account
+        //reportCreator.generateStudentReport();
+         reportCreator.generateLecturerReport(50);
     }
 }
     
