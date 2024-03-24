@@ -18,7 +18,7 @@ public class DatabaseConnection {
        public DatabaseConnection() {
         try {
             connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            System.out.println("Database connected successfully. SUCCESS!!! YAAASSSS");
+            System.out.println("Database connected successfully.");
        
         
        } catch (SQLException e) {
@@ -32,7 +32,7 @@ public class DatabaseConnection {
         try {
             if (connection != null && !connection.isClosed()) {
                 connection.close();
-                System.out.println("Database connection closed. GOOD RIDDANCE!");
+                System.out.println("Database connection closed.");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -57,6 +57,10 @@ public class DatabaseConnection {
         } else {
             System.out.println("Database connection test failed.");
         }
+    }
+    
+     public Connection establishConnection() {
+        return connection;
     }
 }
 
