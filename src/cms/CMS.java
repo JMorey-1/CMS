@@ -25,7 +25,10 @@ public class CMS {
         ReportCreator reportCreator = new ReportCreator(databaseConnection, null);
 
         // Generate the course report
-        reportCreator.generateCourseReport();
+        //reportCreator.generateCourseReport();
+        
+        
+        reportCreator.generateStudentReport();
     }
 }
     
