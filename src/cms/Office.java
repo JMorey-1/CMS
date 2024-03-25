@@ -18,12 +18,13 @@ public class Office extends User {
        
     }
     
-  
+  // Need to do properly with SQL QUERY
     // Method to change office user's OWN username
     public void changeOfficeUsername(String newUsername) {
         setUsername(newUsername);
     }
-
+    
+    // Need to do properly with SQL QUERY
     // Method to change office user's OWN password
     public void changeOfficePassword(String newPassword) {
         setPassword(newPassword);

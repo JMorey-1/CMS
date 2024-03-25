@@ -44,7 +44,11 @@ public class Admin extends User {
     }
 
     // Method to create a lecturer user
-      public void createLecturerUser(String username, String password) {
+   
+    
+    
+    
+    public void createLecturerUser(String username, String password) {
         try {
             // Using hardcoded lecturers_id for testing
             int lecturerId = 12; // Replace with the actual lecturers_id
@@ -63,14 +67,6 @@ public class Admin extends User {
             System.out.println("Error creating lecturer user: " + e.getMessage());
         }
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -180,26 +176,16 @@ public class Admin extends User {
 }
 
     // Method to change admin's username
-    public void changeAdminUsername(String newUsername) {
+   public void changeAdminUsername(String newUsername) {
         setUsername(newUsername);
     }
 
     // Method to change admin's password
-    public void changeAdminPassword(String newPassword) {
+   public void changeAdminPassword(String newPassword) {
         setPassword(newPassword);
     }
 }
     
-    
-    
-    
-    
-    //methods specific to Admin
-      //The only user available at the start
-      //Username: admin■ Password: java
-      //Can add, modify and delete other users (including username, password and role)
-      // Can change their own username and password
-       //Cannot generate reports
     
     
 
