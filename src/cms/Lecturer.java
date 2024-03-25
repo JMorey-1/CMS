@@ -6,14 +6,14 @@ import java.sql.SQLException;
 public class Lecturer extends User {
     private ReportCreator reportCreator;
     private DatabaseConnection connection;
-        //attributes specific to lecturer
+   
     
     
     
     // Constructor
       
     public Lecturer(String username, String password, String userType,ReportCreator reportCreator,DatabaseConnection connection) {
-        // Call the constructor of the superclass (User) to initialize inherited attributes
+        // Call the constructor of the superclass USER
         super(username, password, userType);
         this.reportCreator = reportCreator;
         this.connection = connection;
@@ -64,15 +64,15 @@ public class Lecturer extends User {
    
      //NEED A WAY TO GET LECTURER ID
    // Method to generate a lecturer report for the logged-in lecturer
-    public String generateLecturerReport() {
+   // public String generateLecturerReport() {
     // Get the lecturer ID associated with this object
-    int lecturerId = getLecturerId(); 
+    //int lecturerId = getLecturerId(); 
 
     // Generate the report for the lecturer using their ID
-    return reportCreator.generateLecturerReport(lecturerId);
+   // return reportCreator.generateLecturerReport(lecturerId);
 }
     
     //methods specific to lecturer
     // Can generate a Lecturer Report for themselves
     //Can change their own username and password
-}
+

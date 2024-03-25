@@ -26,10 +26,19 @@ public class CMS {
 
            // Create a DatabaseConnection object
         DatabaseConnection connection = new DatabaseConnection();
-
-
-        // Call the createOfficeUser method with sample username and password
+        //Call the createOfficeUser method with sample username and password
         admin.createLecturerUser("Ruby", "puppy");
+         
+        admin.createOfficeUser("Jamie", "kitten");
+          // Create a MenuSystem instance
+        MenuSystem menuSystem = new MenuSystem(connection);
+
+        // Run the menu system
+        menuSystem.run();
+
+       
+
+        
 
         // Close the database connection
         connection.closeConnection();
