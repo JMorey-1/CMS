@@ -6,28 +6,49 @@ package cms;
 
 public class Office extends User {
    
-    
+     private ReportCreator reportCreator;
         
-        //attributes specific to Office
-    
-    
-    
-    // Constructor
       
-    public Office(String username, String password, String userType) {
-        // Call the constructor of the superclass (User) to initialize inherited attributes
+      
+    public Office(String username, String password, String userType, ReportCreator reportCreator) {
+        // Call the constructor of the superclass (User)
         super(username, password, userType);
-        
-        // Initialize attributes specific to office
+        this.reportCreator = reportCreator;
+       
        
     }
     
+  
+    // Method to change office user's OWN username
+    public void changeOfficeUsername(String newUsername) {
+        setUsername(newUsername);
+    }
+
+    // Method to change office user's OWN password
+    public void changeOfficePassword(String newPassword) {
+        setPassword(newPassword);
+    }
     
     
-    //methods specific to office
-    //Can generate all types of reports
-    //Can change their own username and password
+     // Method to generate a course report
+    public String generateCourseReport() {
+        return reportCreator.generateCourseReport();
+    }
+    
+      // Method to generate a student report
+    public String generateStudentReport(int studentId) {
+        return reportCreator.generateStudentReport(studentId);
+    }
+    
+      
+    // Method to generate a lecturer report
+    public String generateLecturerReport(int lecturerId) {
+        return reportCreator.generateLecturerReport(lecturerId);
+    }
+    
 }
+
+
 
     
     
