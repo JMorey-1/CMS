@@ -39,9 +39,12 @@ public class MenuSystem {
 
 //Displaying and running main menu
  private void displayMainMenu() {
+        System.out.println("Welcome to the CMS system. To continue please log in.");
         System.out.println("Main Menu:");
+        System.out.println("");
         System.out.println("1. Login");
         System.out.println("2. Exit");
+        System.out.println("");
     }
 
     public int getMenuChoice() {
@@ -90,61 +93,39 @@ public class MenuSystem {
 //Authenticating the user login    
 public Object authenticate(String username, String password) throws SQLException {
     // Check if admin
-    
     if (username.equals(admin.getAdminUsername()) && password.equals(admin.getAdminPassword())) {
-          
         return admin;
     } else {
         // Check if user exists in the login_details table
-        try {
-            return authenticateInDatabase(username, password);
+        String query = "SELECT lecturer_id FROM login_details WHERE username = ? AND password = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            // Set parameters
+            statement.setString(1, username);
+            statement.setString(2, password);
+
+            // Execute query
+            try (ResultSet resultSet = statement.executeQuery()) {
+                // Check if any rows are returned
+                if (resultSet.next()) {
+                    int lecturerId = resultSet.getInt("lecturer_id");
+                    if (resultSet.wasNull()) {
+                        // If lecturer_id is null, user is an office user
+                        office = new Office(username, password, "office_user", reportCreator);
+                        return office;
+                    } else {
+                        // If lecturer_id is not null, user is a lecturer
+                        this.lecturerId = lecturerId;
+                        lecturer = new Lecturer(username, password, "lecturer_user", lecturerId, reportCreator);
+                        return lecturer;
+                    }
+                } else {
+                    return null; // No rows returned, authentication failed
+                }
+            }
         } catch (SQLException e) {
             System.out.println("Error authenticating user: " + e.getMessage());
             return null;
         }
-    }
-}
-
-public Object authenticateInDatabase(String username, String password) throws SQLException {
-    String query = "SELECT lecturer_id FROM login_details WHERE username = ? AND password = ?";
-    
-    
-        try ( PreparedStatement statement = connection.prepareStatement(query)) {
-        
-        // Set parameters
-        statement.setString(1, username);
-        statement.setString(2, password);
-        
-        // Execute query
-        try (ResultSet resultSet = statement.executeQuery()) {
-            // Check if any rows are returned
-            if (resultSet.next()) {
-                int lecturerId = resultSet.getInt("lecturer_id");
-                if (resultSet.wasNull()) {
-                    // If lecturer_id is null, user is an office user
-                   
-                    // Set the office object in the MenuSystem class
-                     office = new Office(username, password, "office_user", reportCreator);
-                    return office;
-                } else {
-                   
-                    // If lecturer_id is not null, user is a lecturer
-                    
-                    //Associate the logged in user with class variable that can
-                    //be accessed throughout the class
-                    this.lecturerId = resultSet.getInt("lecturer_id"); 
-                    System.out.println(lecturerId);
-                    lecturer = new Lecturer(username, password, "lecturer_user", lecturerId, reportCreator);
-                    return lecturer;
-                    
-                }
-            } else {
-                return null; // No rows returned, authentication failed
-            }
-        }
-    } catch (SQLException e) {
-        System.out.println("Error authenticating user: " + e.getMessage());
-        return null;
     }
 }
 
@@ -155,17 +136,24 @@ public Object authenticateInDatabase(String username, String password) throws SQ
 //the type of menu to run for them
 public void processLogin() {
     System.out.println("Login:");
+    System.out.println("Please enter Administrator, Lecturer or Office user credientials");
+    System.out.println("Please note if a lecturer or office user has not been created, only the administrator account will be available");
+    System.out.println("");
     System.out.print("Enter username: ");
     String username = scanner.next();
     System.out.print("Enter password: ");
     String password = scanner.next();
+    System.out.println("");
+    System.out.println("");
 
     try {
         // Authenticate the user
         Object user = authenticate(username, password);
 
         if (user instanceof Admin) {
+            System.out.println("");
             System.out.println("Admin login successful!");
+            System.out.println("");
             runAdminMenu();
         } else if (user instanceof Office) {
             System.out.println("Office login successful!");           
@@ -221,23 +209,31 @@ public void processLogin() {
                 admin.deleteUser(userToDelete);
                 break;
             case 5:
+                System.out.print("Enter username of user who's password you want to modify: ");
+                String username = scanner.next();
+                System.out.print("Enter new password: ");
+                String newPassword = scanner.next(); 
+                admin.modifyUserPassword(username, newPassword); // Call the new method for modifying user password
+                break;
+            case 6:
                 System.out.print("Enter new username for admin: ");
                 String newAdminUsername = scanner.next();
                 admin.setAdminUsername(newAdminUsername);
                 break;
-            case 6:
+            case 7:
                 System.out.print("Enter new password for admin: ");
                 String newAdminPassword = scanner.next();
                 admin.setAdminPassword(newAdminPassword);
                 break;
-            case 7:
+            case 8:
                 System.out.println("Logging out...");
                 break;
-            default:
+                
+                default:
                 System.out.println("Invalid choice. Please try again.");
-        }
-    } while (choice != 7);
-}
+            }
+        } while (choice != 8);
+    }
 
 
    // Display admin menu

@@ -15,13 +15,11 @@ import java.util.Properties;
 public class Admin extends User {
 
     private DatabaseConnection connection;
-   // private static String DEFAULT_ADMIN_USERNAME = "admin";
-   // private static String DEFAULT_ADMIN_PASSWORD = "java";
     private String adminUsername;
     private String adminPassword;
     private static final String CONFIG_FILE_PATH = "adminconfig.properties";
     private Properties properties;
-    // Constructor
+ 
   
     
    public Admin() {
