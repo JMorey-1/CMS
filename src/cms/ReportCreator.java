@@ -10,17 +10,18 @@ import java.sql.SQLException;
 public class ReportCreator {
     
  
-    private DatabaseConnection dbConnector;
+    private DatabaseConnection connection;
     private FileOutput fileOutput;
 
-    public ReportCreator(DatabaseConnection dbConnector, FileOutput fileOutput) {
-        this.dbConnector = dbConnector;
+    public ReportCreator(DatabaseConnection databaseConnection, FileOutput fileOutput) {
+        this.connection = databaseConnection;
         this.fileOutput = fileOutput;
     }
 
 public String generateCourseReport() {
        StringBuilder reportContent = new StringBuilder();
-    try (Connection connection = dbConnector.establishConnection()) {
+     
+       try {
         // SQL query to fetch course report data
         String query = "SELECT m.module_name, " +
                 "c.course_name AS program_name, " +
@@ -61,7 +62,8 @@ public String generateCourseReport() {
 
 public String generateStudentReport(int studentId) {
     StringBuilder reportContent = new StringBuilder();
-    try (Connection connection = dbConnector.establishConnection()) {
+    
+    try {
         // SQL query to fetch student report data
       String query = "SELECT s.student_firstname, s.student_lastname, s.student_number, c.course_name AS program_name, " +
                "GROUP_CONCAT(DISTINCT m.module_name) AS enrolled_modules, " +
@@ -116,7 +118,8 @@ public String generateStudentReport(int studentId) {
 
 public String generateLecturerReport(int lecturerId) {
     StringBuilder reportContent = new StringBuilder();
-    try (Connection connection = dbConnector.establishConnection()) {
+    System.out.println(lecturerId);
+    try  {
         // SQL query to fetch lecturer report data
         String query = "SELECT l.lecturer_firstname, l.lecturer_lastname, l.lecturer_role, " +
                        "GROUP_CONCAT(DISTINCT CASE WHEN lm.semester_id = ? THEN m.module_name END) AS taught_modules_this_semester, " +

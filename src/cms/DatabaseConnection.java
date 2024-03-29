@@ -9,13 +9,15 @@ import java.sql.Statement;
 
 public class DatabaseConnection {
     
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/cms_database";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "Thisismysqlpassword1#";
+  private static final String DB_URL = "jdbc:mysql://localhost:3306/cms_database";
+  private static final String DB_USER = "root";
+  private static final String DB_PASSWORD = "Thisismysqlpassword1#";
     
-     private Connection connection;
+  private Connection connection;
      
-       public DatabaseConnection() {
+
+  
+ public DatabaseConnection() {
         try {
             connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             System.out.println("Database connected successfully.");
@@ -27,8 +29,10 @@ public class DatabaseConnection {
         }
     }
        
-    // Method to close the database connection
-    public void closeConnection() {
+    
+
+// Method to close the database connection
+public void closeConnection() {
         try {
             if (connection != null && !connection.isClosed()) {
                 connection.close();
@@ -39,7 +43,7 @@ public class DatabaseConnection {
         }
     }
     
-      public ResultSet executeQuery(String query) {
+public ResultSet executeQuery(String query) {
         try {
             Statement statement = connection.createStatement();
             return statement.executeQuery(query);
@@ -50,8 +54,10 @@ public class DatabaseConnection {
         }
     }
 
-    // Method to test the database connection
-    public void testConnection() {
+
+      
+// Method to test the database connection
+public void testConnection() {
         if (connection != null) {
             System.out.println("Database connection test successful.");
         } else {
@@ -59,15 +65,19 @@ public class DatabaseConnection {
         }
     }
     
-     public PreparedStatement prepareStatement(String query) throws SQLException {
+
+
+public PreparedStatement prepareStatement(String query) throws SQLException {
         return connection.prepareStatement(query);
     }
 
     
-     public Connection establishConnection() {
+public Connection establishConnection() {
         return connection;
     }
+
 }
+
 
 
 

@@ -6,32 +6,65 @@ import java.sql.SQLException;
 public class Lecturer extends User {
     private ReportCreator reportCreator;
     private DatabaseConnection connection;
-   
+    private int lecturerId;
     
     
     
     // Constructor
       
-    public Lecturer(String username, String password, String userType,ReportCreator reportCreator,DatabaseConnection connection) {
-        // Call the constructor of the superclass USER
+        
+    
+ public Lecturer(String username, String password, String userType, int LecturerId, ReportCreator reportCreator) {
+        
+// Call the constructor of the superclass USER
         super(username, password, userType);
         this.reportCreator = reportCreator;
         this.connection = connection;
         
        
     }
-         // Need to do properly with SQL QUERY
-        // Method to change lecturer's own username
-           public void changeLecturerUsername(String newUsername) {
-           setUsername(newUsername);
-          }
+         
+ // Method to change lecturer's own username
+ public void changecurrentLecturerUsername(int lecturerId, String newUsername) {
+            try {
+            // Construct the SQL UPDATE statement
+            String query = "UPDATE login_details SET username = ? WHERE lecturer_username = ?";
+            
+            // Get a connection to the database
+            Connection conn = connection.establishConnection();
+            
+            // Create a PreparedStatement to execute the SQL query
+            PreparedStatement statement = conn.prepareStatement(query);
+            
+            // Set the parameters in the prepared statement
+            
+            statement.setString(1, getUsername()); // Assuming getUsername() retrieves the lecturer's username
+            
+            // Execute the update query
+            int rowsAffected = statement.executeUpdate();
+            
+            // Check if the update was successful
+            if (rowsAffected > 0) {
+                System.out.println("Password updated successfully.");
+            } else {
+                System.out.println("Failed to update password.");
+            }
+            
+            // Closing the statement and connection
+            statement.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Error updating password: " + e.getMessage());
+        }
+    }
+          
     
            
-        // Method to change lecturer's own password
-        public void changeLecturerPassword(String newPassword) {
+ // Method to change lecturer's own password
+  public void changecurrentLecturerPassword(int lecturerId, String newPassword) {
         try {
             // Construct the SQL UPDATE statement
-            String query = "UPDATE lecturers SET lecturer_password = ? WHERE lecturer_username = ?";
+            String query = "UPDATE login_details SET password = ? WHERE lecturer_username = ?";
             
             // Get a connection to the database
             Connection conn = connection.establishConnection();
@@ -59,20 +92,17 @@ public class Lecturer extends User {
         } catch (SQLException e) {
             System.out.println("Error updating password: " + e.getMessage());
         }
+        
+        }
+        
+        
+ // Method to generate a lecturer report
+ public String generatecurrentLecturerReport(int lecturerId) {
+        System.out.println("test test test");
+        if (reportCreator != null) {
+            return reportCreator.generateLecturerReport(lecturerId);
+        } else {
+            return "Report creator is not initialized.";
+        }
     }
-
-   
-     //NEED A WAY TO GET LECTURER ID
-   // Method to generate a lecturer report for the logged-in lecturer
-   // public String generateLecturerReport() {
-    // Get the lecturer ID associated with this object
-    //int lecturerId = getLecturerId(); 
-
-    // Generate the report for the lecturer using their ID
-   // return reportCreator.generateLecturerReport(lecturerId);
 }
-    
-    //methods specific to lecturer
-    // Can generate a Lecturer Report for themselves
-    //Can change their own username and password
-
