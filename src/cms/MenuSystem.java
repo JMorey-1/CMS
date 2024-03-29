@@ -273,19 +273,19 @@ public void runOfficeUserMenu() {
                 break;
             case 3:
                 String courseReport = office.generateCourseReport(); // Generate the report content
-                 chooseReportOutputFormat(courseReport, "course_report");// Output the report
+                chooseReportOutputFormat(courseReport, "course_report", "course"); // Output the report
                 break;
             case 4:
                 System.out.print("Enter student ID: ");
                 int studentId = scanner.nextInt();
                 String studentReport = office.generateStudentReport(studentId); // Generate the student report
-                chooseReportOutputFormat(studentReport, "student_report");// Output the report
+                chooseReportOutputFormat(studentReport, "student_report", "student"); // Output the report
                 break;
             case 5:
                 System.out.print("Enter lecturer ID: ");
                 int lecturerId = scanner.nextInt();
                 String lecturerReport = office.generateLecturerReport(lecturerId); // Generate the lecturer report
-                chooseReportOutputFormat(lecturerReport, "lecturer_report");// // Output the report
+                chooseReportOutputFormat(lecturerReport, "lecturer_report", "lecturer"); // Output the report
                 break;
             case 6:
                 System.out.println("Logging out...");
@@ -320,9 +320,9 @@ public void runLecturerMenu() {
         choice = getMenuChoice();
         switch (choice) {
             case 1:
-                 String lecturerReport =lecturer.generatecurrentLecturerReport(lecturerId); // Call method to generate lecturer report
-                chooseReportOutputFormat(lecturerReport, "lecturer_report");// // Output the report
-                break;
+                 String lecturerReport = lecturer.generatecurrentLecturerReport(lecturerId); // Call method to generate lecturer report
+                 chooseReportOutputFormat(lecturerReport, "lecturer_report", "lecturer"); // Output the report
+                 break;
             case 2:
                 System.out.print("Enter new password: ");
                 String newPassword = scanner.next();
@@ -341,7 +341,6 @@ public void runLecturerMenu() {
         }
     } while (choice != 4); // Correct placement of while loop condition
 }
-    
     // Display office user menu
     public void displayLecturerMenu() {
     System.out.println("Lecturer Menu:");
@@ -354,7 +353,7 @@ public void runLecturerMenu() {
     
 
 
-private void chooseReportOutputFormat(String reportContent, String reportName) {
+private void chooseReportOutputFormat(String reportContent, String reportName, String reportType) {
     System.out.println(" Please choose the output format for " + reportName + ":");
     System.out.println("1. Text (TXT)");
     System.out.println("2. CSV");
@@ -376,7 +375,8 @@ private void chooseReportOutputFormat(String reportContent, String reportName) {
             format = "txt";
             break;
     }
-    fileOutput.outputReport(reportContent, reportName, format);
+    // Pass the report type along with other parameters to the outputReport method
+    fileOutput.outputReport(reportContent, reportName, format, reportType);
 }
   
     
