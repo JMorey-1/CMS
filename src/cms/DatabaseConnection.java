@@ -17,9 +17,9 @@ import java.sql.Statement;
  */
 public class DatabaseConnection {
     
-  private static final String DB_URL = "jdbc:mysql://localhost:3306/cms_database";
-  private static final String DB_USER = "root";
-  private static final String DB_PASSWORD = "Thisismysqlpassword1#";
+  private static final String DB_URL = "jdbc:mysql://localhost:3306/";
+  private static final String DB_USER = "pooa2024";
+  private static final String DB_PASSWORD = "pooa2024";
     
   private Connection connection;
      
