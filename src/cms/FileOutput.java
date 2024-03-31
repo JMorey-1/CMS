@@ -3,17 +3,24 @@ package cms;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 import java.io.BufferedWriter;
-import cms.users.User;
-import cms.users.Admin;
-import cms.users.Office;
-import cms.users.Lecturer;
 
 
+/**
+ * Provides functionality to output reports to different file formats or to the console.
+ * Supports output in TXT and CSV formats.
+ */
 public class FileOutput {
     
- 
+/**
+ * Outputs the report content to the specified file format.
+ * Supports TXT and CSV formats. If the format is "console", the report is printed to the console.
+ *
+ * @param reportContent The content of the report to be output.
+ * @param fileName      The name of the file to which the report will be written.
+ * @param format        The format in which the report will be written (TXT, CSV, or console).
+ * @param reportType    The type of report being generated (lecturer, student, or course).
+ */
 public void outputReport(String reportContent, String fileName, String format, String reportType) {
     switch (format.toLowerCase()) {
         case "txt":
@@ -32,8 +39,12 @@ public void outputReport(String reportContent, String fileName, String format, S
     }
 }
 
- 
- 
+/**
+ * Writes the report content to a text file with the specified file name.
+ *
+ * @param reportContent The content of the report to be written.
+ * @param fileName      The name of the text file to which the report will be written.
+ */ 
 private void writeTextFile(String reportContent, String fileName) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writer.write(reportContent);
@@ -43,7 +54,14 @@ private void writeTextFile(String reportContent, String fileName) {
             e.printStackTrace();
         }
     }
-    
+/**
+ * Sorting method that determines the type of report to be written and then passes
+ * it to the appropriate sub method, each sub method tweaked for particular file layout.
+ *
+ * @param reportContent The content of the report to be written.
+ * @param fileName      The name of the CSV file to which the report will be written.
+ * @param reportType    The type of report being written (lecturer, student, or course).
+ */    
 private void writeCSVFile(String reportContent, String fileName, String reportType) {
     try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
         switch (reportType.toLowerCase()) {
@@ -67,8 +85,15 @@ private void writeCSVFile(String reportContent, String fileName, String reportTy
     }
 }
 
+ /**
+  * Reorganizes lecturer report content and writes it to a CSV file using the provided BufferedWriter.
+  *
+  * @param reportContent The content of the lecturer report to be written.
+  * @param writer        The BufferedWriter used to write to the CSV file.
+  * @throws IOException If an I/O error occurs while writing to the file.
+  */
   private void writeLecturerCSV(String reportContent, BufferedWriter writer) throws IOException {
-    // Write CSV header for lecturer report
+    // CSV headers for lecturer report
     writer.write("Lecturer Name,Lecturer Role,Modules Teaching This Semester,Number of Students,All Modules Taught");
     writer.newLine();
 
@@ -113,6 +138,13 @@ private void writeCSVFile(String reportContent, String fileName, String reportTy
     writer.newLine();
 }
 
+/**
+ * Reorganizes the student report content and writes to a CSV file using the provided BufferedWriter.
+ *
+ * @param reportContent The content of the student report to be written.
+ * @param writer        The BufferedWriter used to write to the CSV file.
+ * @throws IOException If an I/O error occurs while writing to the file.
+ */
   private void writeStudentCSV(String reportContent, BufferedWriter writer) throws IOException {
     // Write CSV header for student report
     writer.write("Student Name,Student Number,Program,Enrolled Modules,Completed Modules,Modules to Repeat");
@@ -163,6 +195,14 @@ private void writeCSVFile(String reportContent, String fileName, String reportTy
     writer.newLine();
 }
 
+  
+/**
+ * Reorganizes course report and writes content to a CSV file using the provided BufferedWriter.
+ *
+ * @param reportContent The content of the course report to be written.
+ * @param writer        The BufferedWriter used to write to the CSV file.
+ * @throws IOException If an I/O error occurs while writing to the file.
+ */
   private void writeCourseCSV(String reportContent, BufferedWriter writer) throws IOException {
     // Write CSV header for course report
     writer.write("Module Name,Program,Students Enrolled,Lecturer,Room");
@@ -188,9 +228,8 @@ private void writeCSVFile(String reportContent, String fileName, String reportTy
             writer.write(moduleName + "," + program + "," + studentsEnrolled + "," + lecturer + "," + room);
             writer.newLine();
         }
+      }
     }
-}
-
 }
 
 

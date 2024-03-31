@@ -6,22 +6,21 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Lecturer extends User {
+    
+    
     private ReportCreator reportCreator;
     private DatabaseConnection connection;
     private int lecturerId;
     
-    
-    
-    // Constructor
+  
       
         
     
  public Lecturer(String username, String password, String userType, int LecturerId, ReportCreator reportCreator) {
         
-// Call the constructor of the superclass USER
+        // Call the constructor of the superclass USER
         super(username, password, userType);
         this.reportCreator = reportCreator;
-        this.connection = connection;
         
        
     }

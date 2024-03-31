@@ -10,6 +10,11 @@ import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
+/**
+ * The menu system of the Course Management System (CMS).
+ * Responsible for displaying menus, processing user input, and navigating between different user interfaces.
+ */
 public class MenuSystem {
     private Scanner scanner;
     private DatabaseConnection connection;
@@ -20,7 +25,18 @@ public class MenuSystem {
     private Lecturer lecturer;
     private int lecturerId;
             
-    public MenuSystem(DatabaseConnection connection, FileOutput fileOutput, ReportCreator reportCreator) {
+
+    
+    
+/**
+ * Constructs a new MenuSystem object.
+ * Initializes the scanner, database connection, admin instance, file output, and report creator.
+ * 
+ * @param connection the database connection instance
+ * @param fileOutput the file output instance
+ * @param reportCreator the report creator instance
+ */   
+public MenuSystem(DatabaseConnection connection, FileOutput fileOutput, ReportCreator reportCreator) {
     try {
         this.connection = connection; 
         this.admin = new Admin();
@@ -41,7 +57,9 @@ public class MenuSystem {
 
 
 
-//Displaying and running main menu
+/**
+ * Displays the main menu.
+ */
  private void displayMainMenu() {
         System.out.println("Welcome to the CMS system. To continue please log in.");
         System.out.println("Main Menu:");
@@ -51,7 +69,13 @@ public class MenuSystem {
         System.out.println("");
     }
 
-    public int getMenuChoice() {
+    
+ /**
+  * Gets the menu choice from the user.
+  * 
+  * @return the menu choice entered by the user
+  */
+ public int getMenuChoice() {
         int choice = 0;
         while (true) {
             try {
@@ -66,11 +90,18 @@ public class MenuSystem {
         return choice;
     }
 
-    public void closeScanner() {
+  /**
+   * Closes the scanner.
+   */
+ public void closeScanner() {
         scanner.close();
     }
 
-    public void runMainMenu() {
+ 
+ /**
+  * Runs the main menu.
+  */
+public void runMainMenu() {
         int choice;
         do {
             displayMainMenu();
@@ -87,14 +118,26 @@ public class MenuSystem {
             }
         } while (choice != 2);
     }
+ 
 
-    public void run() {
+/**
+  * Runs the entire menu system.
+  */
+ public void run() {
         runMainMenu();
         // Other menu logic goes here
     }
 
     
-//Authenticating the user login    
+/**
+ * Authenticates the user login. Determines what type of the user is logging in
+ * and instantiates office and lecturer objects.
+ * 
+ * @param username the username entered by the user
+ * @param password the password entered by the user
+ * @return the user object if authentication is successful, otherwise null
+ * @throws SQLException if a database error occurs
+ */   
 public Object authenticate(String username, String password) throws SQLException {
     // Check if admin
     if (username.equals(admin.getAdminUsername()) && password.equals(admin.getAdminPassword())) {
@@ -136,9 +179,9 @@ public Object authenticate(String username, String password) throws SQLException
 
 
 
-
-// Determining the type of user that logged in and
-//then which menu to run for them
+/**
+ * Processes the login procedure.
+ */
 public void processLogin() {
     
     System.out.println("Login:");
@@ -379,7 +422,13 @@ public void runLecturerMenu() {
 
     
 
-
+/**
+  * Prompts the user to choose the output format for a report and outputs the report accordingly.
+  * 
+  * @param reportContent the content of the report
+  * @param reportName the name of the report
+  * @param reportType the type of the report (e.g., course, student, lecturer)
+  */
 private void chooseReportOutputFormat(String reportContent, String reportName, String reportType) {
     System.out.println(" Please choose the output format for " + reportName + ":");
     System.out.println("1. Text (TXT)");

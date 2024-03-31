@@ -10,17 +10,36 @@ import cms.users.Admin;
 import cms.users.Office;
 import cms.users.Lecturer;
 
+/**
+ * Class for generating reports based on database queries.
+ * Contains 3 methods for the 3 current different report types
+ * In future SQL queries could be edited to alter report info
+ * Or new report methods can easily be swapped in or out.
+ * 
+ */
 public class ReportCreator {
-    
- 
-    private DatabaseConnection connection;
-    private FileOutput fileOutput;
+     
+ private DatabaseConnection connection;
+ private FileOutput fileOutput;
 
-    public ReportCreator(DatabaseConnection databaseConnection, FileOutput fileOutput) {
+    
+/**
+ * Constructs a new ReportCreator object with the specified database connection and file output utility.
+ *
+ * @param databaseConnection The database connection used for executing queries.
+ * @param fileOutput         The file output utility used for writing reports to files.
+ */   
+public ReportCreator(DatabaseConnection databaseConnection, FileOutput fileOutput) {
         this.connection = databaseConnection;
         this.fileOutput = fileOutput;
     }
 
+
+/**
+ * Generates a course report based on the data retrieved from the database.
+ *
+ * @return The generated course report as a string.
+ */
 public String generateCourseReport() {
        StringBuilder reportContent = new StringBuilder();
      
@@ -63,6 +82,15 @@ public String generateCourseReport() {
 }
 
 
+
+/**
+ * Generates a student report for the specified student ID.
+ *
+ * @param studentId The ID of the student for whom the report is generated.
+ * Due to my current database setup this ID should be an int between 1 and 300.
+ * 
+ * @return The generated student report as a string.
+ */
 public String generateStudentReport(int studentId) {
     StringBuilder reportContent = new StringBuilder();
     
@@ -119,6 +147,15 @@ public String generateStudentReport(int studentId) {
 }
 
 
+
+  /**
+     * Generates a lecturer report for the specified lecturer ID.
+     *
+     * @param lecturerId The ID of the lecturer for whom the report is generated.
+     * Due to my current database setup this ID should be an int between 1 and 100.
+     * 
+     * @return The generated lecturer report as a string.
+     */
 public String generateLecturerReport(int lecturerId) {
     StringBuilder reportContent = new StringBuilder();
     System.out.println(lecturerId);

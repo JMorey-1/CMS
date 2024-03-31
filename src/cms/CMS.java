@@ -9,7 +9,10 @@ import cms.users.Office;
 import cms.users.Lecturer;
 
 
-
+/**
+ * The main class for the Course Management System (CMS).
+ * Responsible for initializing resources and running the main menu.
+ */
 public class CMS {
     
     // Initialize database connection, scanner, file output, and report creator
@@ -19,8 +22,13 @@ public class CMS {
     private static ReportCreator reportCreator = new ReportCreator(databaseConnection, fileOutput);
 
    
-    
-    public static void main(String[] args) {
+/**
+ * The entry point of the CMS application.
+ * Initializes resources and runs the main menu.
+ *
+ * @param args the command-line arguments
+ */   
+public static void main(String[] args) {
         try {
             // Create an instance of MenuSystem and pass it's dependencies
             MenuSystem menuSystem = new MenuSystem(databaseConnection, fileOutput, reportCreator);
@@ -35,10 +43,13 @@ public class CMS {
             // Ensure resources are properly closed
             closeResources();
         }
-    }
+       }
 
-    // Close resources to prevent resource leaks
-    private static void closeResources() {
+   
+ /**
+  * Closes resources to prevent resource leaks.
+  */
+ private static void closeResources() {
         try {
             if (scanner != null) {
                 scanner.close(); // Closing my scanner

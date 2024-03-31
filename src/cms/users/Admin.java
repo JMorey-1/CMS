@@ -8,22 +8,31 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Connection;
-import java.sql.Statement;
-import java.sql.DriverManager;
 import java.util.Properties;
 
-
+/**
+ * Represents an admin user in the Course Management System (CMS).
+ * Extends the User class.
+ * This class provides functionality for managing admin-related tasks.
+ * For security purposes I decided to use a config file to store the admin
+ * password and username, separate to the database, the original plan was to have this encrypted but I 
+ * unfortunately ran out of time
+ */
 public class Admin extends User {
 
     private DatabaseConnection connection;
     private String adminUsername;
     private String adminPassword;
+    //The path to the configuration file for admin properties.
     private static final String CONFIG_FILE_PATH = "adminconfig.properties";
+    /** The properties object to store admin configuration settings. */
     private Properties properties;
  
   
-    
-   public Admin() {
+/**
+ * Constructs a new Admin object with default properties.
+ */    
+public Admin() {
         super(null, null, "admin");
         properties = new Properties();
         try {
@@ -43,14 +52,26 @@ public class Admin extends User {
     }
   
     
-    
+ /**
+  * Constructs a new Admin object with the specified username, password, user type, and database connection.
+  *
+  * @param username the username of the admin
+  * @param password the password of the admin
+  * @param userType the user type of the admin
+  * @param databaseConnection the database connection instance
+  */   
  public Admin(String username, String password, String userType, DatabaseConnection databaseConnection) {
         super(username, password, userType);
         this.connection = databaseConnection;
     }
 
    
-// Method to create a new office user
+ /**
+  * Creates a new office user with the specified username and password.
+  *
+  * @param username the username of the new office user
+  * @param password the password of the new office user
+  */
 public void createOfficeUser(String username, String password) {
           Connection dbConnection = connection.establishConnection();
           try (PreparedStatement statement = dbConnection.prepareStatement("INSERT INTO login_details (username, password) VALUES (?, ?)")) {
@@ -69,7 +90,14 @@ public void createOfficeUser(String username, String password) {
     }
 
 
-// Method to create a new lecturer user
+ /**
+  * Creates a new lecturer user with the specified username, password, and lecturer ID.
+  *
+  * @param username the username of the new lecturer user
+  * @param password the password of the new lecturer user
+  * @param lecturerId the ID of the lecturer
+  * Due to my current database setup this ID should be an int between 1 and 100.
+  */
 public void createLecturerUser(String username, String password, int lecturerId) {
         Connection dbConnection = connection.establishConnection();
         try (PreparedStatement statement = dbConnection.prepareStatement("INSERT INTO login_details (username, password, lecturer_id) VALUES (?, ?, ?)")) {
@@ -88,7 +116,12 @@ public void createLecturerUser(String username, String password, int lecturerId)
     }
 
 
-// Method to change a users username
+ /**
+  * Modifies the username of a user from the existing username to the new username.
+  *
+  * @param existingUsername the existing username to be modified
+  * @param newUsername the new username to replace the existing username
+  */
 public void modifyUsername(String existingUsername, String newUsername) {
           Connection dbConnection = connection.establishConnection();
     try (PreparedStatement statement = dbConnection.prepareStatement("UPDATE login_details SET username = ? WHERE username = ?")) {
@@ -106,7 +139,12 @@ public void modifyUsername(String existingUsername, String newUsername) {
     }
 }
 
-
+/**
+ * Changes the role of a lecturer user identified by the username.
+ *
+ * @param username the username of the lecturer whose role is to be changed
+ * @param newRole the new role to be assigned to the lecturer
+ */
 public void changeLecturerRole(String username, String newRole) {
     Connection dbConnection = connection.establishConnection();
     try (PreparedStatement statement = dbConnection.prepareStatement("UPDATE lecturers SET role = ? WHERE lecturer_id = (SELECT lecturer_id FROM login_details WHERE username = ?)")) {
@@ -124,7 +162,12 @@ public void changeLecturerRole(String username, String newRole) {
     }
 }
 
-// Method to change a users password
+/**
+ * Modifies the password of a user identified by the username.
+ *
+ * @param username the username of the user whose password is to be modified
+ * @param newPassword the new password to replace the existing password
+ */
 public void modifyUserPassword(String username, String newPassword) {
     Connection dbConnection = connection.establishConnection();
     try (PreparedStatement statement = dbConnection.prepareStatement("UPDATE login_details SET password = ? WHERE username = ?")) {
@@ -143,7 +186,12 @@ public void modifyUserPassword(String username, String newPassword) {
 }
 
 
-// Method to delete a user from the database, use carefully!
+/**
+ * Deletes a user from the database using the specified username.
+ * Use this method with caution.
+ *
+ * @param username the username of the user to be deleted
+ */
 public void deleteUser(String username) {
     Connection dbConnection = connection.establishConnection();
     
@@ -161,27 +209,45 @@ public void deleteUser(String username) {
     }
 }
 
-
+ /**
+  * Retrieves the default admin username.
+  *
+  * @return the default admin username
+  */
 public String getAdminUsername() {
         return properties.getProperty("default_admin_username", "admin");
     }
-
+/**
+ * Retrieves the default admin password.
+ *
+ * @return the default admin password
+ */
 public String getAdminPassword() {
         return properties.getProperty("default_admin_password", "java");
     }
-
+ /**
+  * Sets the default admin username.
+  *
+  * @param newAdminUsername the new admin username
+  */
 public void setAdminUsername(String newAdminUsername) {
         properties.setProperty("default_admin_username", newAdminUsername);
         saveProperties();
     }
   
   
-  
- public void setAdminPassword(String newAdminPassword) {
+/**
+ * Sets the default admin password.
+ *
+ * @param newAdminPassword the new admin password
+ */  
+public void setAdminPassword(String newAdminPassword) {
         properties.setProperty("default_admin_password", newAdminPassword);
         saveProperties();
     }
-
+/**
+ * Saves the admin properties to the configuration file.
+ */
  private void saveProperties() {
         try {
             FileOutputStream fos = new FileOutputStream(CONFIG_FILE_PATH);
