@@ -87,7 +87,7 @@ public void createLecturerUser(String username, String password, int lecturerId)
     }
 
 
-// Method to change admin's username
+// Method to change a users username
 public void modifyUsername(String existingUsername, String newUsername) {
           Connection dbConnection = connection.establishConnection();
     try (PreparedStatement statement = dbConnection.prepareStatement("UPDATE login_details SET username = ? WHERE username = ?")) {
@@ -106,8 +106,25 @@ public void modifyUsername(String existingUsername, String newUsername) {
 }
 
 
+public void changeLecturerRole(String username, String newRole) {
+    Connection dbConnection = connection.establishConnection();
+    try (PreparedStatement statement = dbConnection.prepareStatement("UPDATE lecturers SET role = ? WHERE lecturer_id = (SELECT lecturer_id FROM login_details WHERE username = ?)")) {
+        statement.setString(1, newRole);
+        statement.setString(2, username);
+
+        int rowsUpdated = statement.executeUpdate();
+        if (rowsUpdated > 0) {
+            System.out.println("Lecturer's role modified successfully.");
+        } else {
+            System.out.println("Failed to modify lecturer's role. Lecturer not found.");
+        }
+    } catch (SQLException e) {
+        System.out.println("Error modifying lecturer's role: " + e.getMessage());
+    }
+}
+
 // Method to change a users password
-public void modifyPassword(String username, String newPassword) {
+public void modifyUserPassword(String username, String newPassword) {
     Connection dbConnection = connection.establishConnection();
     try (PreparedStatement statement = dbConnection.prepareStatement("UPDATE login_details SET password = ? WHERE username = ?")) {
         statement.setString(1, newPassword);
@@ -148,23 +165,23 @@ public String getAdminUsername() {
         return properties.getProperty("default_admin_username", "admin");
     }
 
- public String getAdminPassword() {
+public String getAdminPassword() {
         return properties.getProperty("default_admin_password", "java");
     }
 
-  public void setAdminUsername(String newAdminUsername) {
+public void setAdminUsername(String newAdminUsername) {
         properties.setProperty("default_admin_username", newAdminUsername);
         saveProperties();
     }
   
   
   
-    public void setAdminPassword(String newAdminPassword) {
+ public void setAdminPassword(String newAdminPassword) {
         properties.setProperty("default_admin_password", newAdminPassword);
         saveProperties();
     }
 
-     private void saveProperties() {
+ private void saveProperties() {
         try {
             FileOutputStream fos = new FileOutputStream(CONFIG_FILE_PATH);
             properties.store(fos, null);

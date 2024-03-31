@@ -1,45 +1,54 @@
-
 package cms;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+
+
 import java.util.Scanner;
 
 
+
+
 public class CMS {
-   private FileOutput fileOutput;
-    private Scanner scanner;
-    private DatabaseConnection connection;
-    private Admin admin;
-    private Office office;
-    private ReportCreator reportCreator;
+    
+    // Initialize database connection, scanner, file output, and report creator
+    private static DatabaseConnection databaseConnection = new DatabaseConnection();
+    private static Scanner scanner = new Scanner(System.in);
+    private static FileOutput fileOutput = new FileOutput();
+    private static ReportCreator reportCreator = new ReportCreator(databaseConnection, fileOutput);
 
+   
+    
+    public static void main(String[] args) {
+        try {
+            // Create an instance of MenuSystem and pass it's dependencies
+            MenuSystem menuSystem = new MenuSystem(databaseConnection, fileOutput, reportCreator);
 
-   public static void main(String[] args) {
-        // Initialize database connector
-        DatabaseConnection databaseConnection = new DatabaseConnection();
-        Scanner scanner = new Scanner(System.in);
-        FileOutput fileOutput = new FileOutput();
-       
-                 
-        ReportCreator reportCreator = new ReportCreator(databaseConnection, fileOutput);
-       // Define the database connection details
-       
-      // Create an instance of MenuSystem
-        MenuSystem menuSystem = new MenuSystem(databaseConnection,fileOutput,reportCreator
-        );
+            // Run the main menu
+            menuSystem.runMainMenu();
+        } catch (Exception e) {
+            // Handle any unexpected exceptions and printing helpful error mesages
+            System.err.println("An unexpected error occurred: " + e.getMessage());
+            e.printStackTrace(); // Print stack trace for debugging
+        } finally {
+            // Ensure resources are properly closed
+            closeResources();
+        }
+    }
 
-        // Run the main menu
-        menuSystem.runMainMenu();
-
-   }
+    // Close resources to prevent resource leaks
+    private static void closeResources() {
+        try {
+            if (scanner != null) {
+                scanner.close(); // Closing my scanner
+            }
+            if (databaseConnection != null) {
+                databaseConnection.closeConnection(); // Closing database connection
+            }
+        } catch (Exception e) {
+            // Log any errors
+            System.err.println("Error closing resources: " + e.getMessage());
+        }
+    }
 }
-      
         
     
 

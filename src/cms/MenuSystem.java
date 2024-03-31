@@ -16,7 +16,7 @@ public class MenuSystem {
     private ReportCreator reportCreator;
     private Lecturer lecturer;
     private int lecturerId;
-    
+            
     public MenuSystem(DatabaseConnection connection, FileOutput fileOutput, ReportCreator reportCreator) {
     try {
         this.connection = connection; 
@@ -26,6 +26,7 @@ public class MenuSystem {
         this.scanner = new Scanner(System.in);
         this.fileOutput = fileOutput; // Assigned fileOutput passed to constructor
         this.reportCreator = new ReportCreator(this.connection, this.fileOutput);
+        
         
     } catch (Exception e) {
         System.out.println("Error initializing MenuSystem: " + e.getMessage());
@@ -110,7 +111,8 @@ public Object authenticate(String username, String password) throws SQLException
                     int lecturerId = resultSet.getInt("lecturer_id");
                     if (resultSet.wasNull()) {
                         // If lecturer_id is null, user is an office user
-                        office = new Office(username, password, "office_user", reportCreator);
+                        office = new Office(username, password, "office_user", reportCreator, connection);
+                       System.out.println("Office user initialized. Username: " + office.getUsername());
                         return office;
                     } else {
                         // If lecturer_id is not null, user is a lecturer
@@ -133,8 +135,9 @@ public Object authenticate(String username, String password) throws SQLException
 
 
 // Determining the type of user that logged in and
-//the type of menu to run for them
+//then which menu to run for them
 public void processLogin() {
+    
     System.out.println("Login:");
     System.out.println("Please enter Administrator, Lecturer or Office user credientials");
     System.out.println("Please note if a lecturer or office user has not been created, only the administrator account will be available");
@@ -157,10 +160,11 @@ public void processLogin() {
             runAdminMenu();
         } else if (user instanceof Office) {
             System.out.println("Office login successful!");           
+            System.out.println("Welcome " + username + "!");
             runOfficeUserMenu();
         } else if (user instanceof Lecturer) {
             System.out.println("Lecturer login successful!");
-            System.out.println(lecturerId);
+            System.out.println("Welcome " + username + "!");
             runLecturerMenu();
         } else {
             System.out.println("Invalid username or password. Please try again.");
@@ -187,15 +191,18 @@ public void processLogin() {
                 String officePassword = scanner.next();
                 admin.createOfficeUser(officeUsername, officePassword);
                 break;
+                
             case 2:
                 System.out.print("Enter username for lecturer: ");
                 String lecturerUsername = scanner.next();
                 System.out.print("Enter password for lecturer: ");
                 String lecturerPassword = scanner.next();
                 System.out.print("Enter lecturer ID: ");
+                System.out.println("(For Sams eyes only: Number between 1 and 100)");
                 int lecturerId = scanner.nextInt();
                 admin.createLecturerUser(lecturerUsername, lecturerPassword, lecturerId);
                 break;
+                
             case 3:
                 System.out.print("Enter existing username to modify: ");
                 String existingUsername = scanner.next();
@@ -203,29 +210,42 @@ public void processLogin() {
                 String newUsername = scanner.next();
                 admin.modifyUsername(existingUsername, newUsername);
                 break;
-            case 4:
-                System.out.print("Enter username to delete: ");
-                String userToDelete = scanner.next();
-                admin.deleteUser(userToDelete);
-                break;
-            case 5:
+              
+             case 4:
                 System.out.print("Enter username of user who's password you want to modify: ");
                 String username = scanner.next();
                 System.out.print("Enter new password: ");
                 String newPassword = scanner.next(); 
                 admin.modifyUserPassword(username, newPassword); // Call the new method for modifying user password
+                break;   
+             
+            case 5:
+                System.out.print("Enter username of the lecturer who's role you want to modify: ");
+                String lecturerusername = scanner.next();
+                System.out.print("Enter new password: ");
+                String newRole = scanner.next(); 
+                admin.changeLecturerRole(lecturerusername, newRole); // Call the new method for modifying user password
                 break;
+                
             case 6:
+                System.out.print("Enter username to delete: ");
+                String userToDelete = scanner.next();
+                admin.deleteUser(userToDelete);
+                break;
+                
+            case 7:
                 System.out.print("Enter new username for admin: ");
                 String newAdminUsername = scanner.next();
                 admin.setAdminUsername(newAdminUsername);
                 break;
-            case 7:
+                
+            case 8:
                 System.out.print("Enter new password for admin: ");
                 String newAdminPassword = scanner.next();
                 admin.setAdminPassword(newAdminPassword);
                 break;
-            case 8:
+                
+            case 9:
                 System.out.println("Logging out...");
                 break;
                 
@@ -236,22 +256,26 @@ public void processLogin() {
     }
 
 
-   // Display admin menu
-   public void displayAdminMenu() {
+    // Display admin menu
+    public void displayAdminMenu() {
     System.out.println("Admin Menu:");
-    System.out.println("1. Add Office User");
-    System.out.println("2. Add Lecturer User");
-    System.out.println("3. Modify Username");
-    System.out.println("4. Delete User");
-    System.out.println("5. Change Admin Username");
-    System.out.println("6. Change Admin Password");
-    System.out.println("7. Logout");
+    System.out.println("");
+    System.out.println("1. Create and add a new Office User");
+    System.out.println("2. Create and add a new Lecturer User");
+    System.out.println("3. Modify existing users username");
+    System.out.println("4. Modify lecturer's role");
+    System.out.println("5. Modify existing users password");
+    System.out.println("6. Delete user");
+    System.out.println("7. Change Administrator username");
+    System.out.println("8. Change Administrators password");
+    System.out.println("9. Logout");
 }
 
    
     
 // Run office user menu
 public void runOfficeUserMenu() {
+    
     int choice;
     do {
         displayOfficeUserMenu();
@@ -260,12 +284,12 @@ public void runOfficeUserMenu() {
             case 1:
                 System.out.print("Enter new username: ");
                 String newUsername = scanner.next();
-                office.changeOfficeUsername(newUsername); // Call method to change own username
+                office.changeOfficeUsername(newUsername, office); // Call method to change own username
                 break;
             case 2:
                 System.out.print("Enter new password: ");
                 String newPassword = scanner.next();
-                office.changeOfficePassword(newPassword); // Call method to change own password
+                office.changeOfficePassword(newPassword, office); // Call method to change own password
                 break;
             case 3:
                 String courseReport = office.generateCourseReport(); // Generate the report content
@@ -273,12 +297,14 @@ public void runOfficeUserMenu() {
                 break;
             case 4:
                 System.out.print("Enter student ID: ");
+                System.out.println("(For Sams eyes only: Number between 1 and 300)");
                 int studentId = scanner.nextInt();
                 String studentReport = office.generateStudentReport(studentId); // Generate the student report
                 chooseReportOutputFormat(studentReport, "student_report", "student"); // Output the report
                 break;
             case 5:
                 System.out.print("Enter lecturer ID: ");
+                System.out.println("(For Sams eyes only: Number between 1 and 100)");
                 int lecturerId = scanner.nextInt();
                 String lecturerReport = office.generateLecturerReport(lecturerId); // Generate the lecturer report
                 chooseReportOutputFormat(lecturerReport, "lecturer_report", "lecturer"); // Output the report
@@ -296,6 +322,7 @@ public void runOfficeUserMenu() {
     public void displayOfficeUserMenu() {
       
     System.out.println("Office User Menu:");
+    System.out.println("");
     System.out.println("1. Change Own Username");
     System.out.println("2. Change Own Password");
     System.out.println("3. Generate Course Report");
@@ -308,7 +335,7 @@ public void runOfficeUserMenu() {
 
 // Run lecturer menu
 public void runLecturerMenu() {
-    System.out.println(lecturerId);
+    
     
     int choice;
     do {
@@ -337,9 +364,11 @@ public void runLecturerMenu() {
         }
     } while (choice != 4); // Correct placement of while loop condition
 }
+    
     // Display office user menu
     public void displayLecturerMenu() {
     System.out.println("Lecturer Menu:");
+    System.out.println("");
     System.out.println("1. Generate your Lecturer Report");
     System.out.println("2. Change your Password");
     System.out.println("3. Change your Username");

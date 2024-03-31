@@ -7,24 +7,24 @@ public class User {
     
  
     // Attribute
-    private String username;
+    private String userName;
     private String password;
     private String userType;
     
     // Constructors
     public User(String username, String password, String userType) {
-        this.username = username;
+        this.userName = username;
         this.password = password;
         this.userType = userType;
     }
     
     // Getters and setters
     public String getUsername() {
-        return username;
+        return userName;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.userName = username;
     }
 
     public String getPassword() {
