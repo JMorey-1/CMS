@@ -5,7 +5,10 @@ package cms;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import cms.users.User;
+import cms.users.Admin;
+import cms.users.Office;
+import cms.users.Lecturer;
 
 public class ReportCreator {
     

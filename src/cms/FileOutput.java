@@ -5,13 +5,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.io.BufferedWriter;
-
+import cms.users.User;
+import cms.users.Admin;
+import cms.users.Office;
+import cms.users.Lecturer;
 
 
 public class FileOutput {
     
  
- public void outputReport(String reportContent, String fileName, String format, String reportType) {
+public void outputReport(String reportContent, String fileName, String format, String reportType) {
     switch (format.toLowerCase()) {
         case "txt":
             writeTextFile(reportContent, fileName + ".txt");
@@ -29,7 +32,9 @@ public class FileOutput {
     }
 }
 
-    private void writeTextFile(String reportContent, String fileName) {
+ 
+ 
+private void writeTextFile(String reportContent, String fileName) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writer.write(reportContent);
             System.out.println("Report successfully written to " + fileName);
@@ -62,7 +67,7 @@ private void writeCSVFile(String reportContent, String fileName, String reportTy
     }
 }
 
-private void writeLecturerCSV(String reportContent, BufferedWriter writer) throws IOException {
+  private void writeLecturerCSV(String reportContent, BufferedWriter writer) throws IOException {
     // Write CSV header for lecturer report
     writer.write("Lecturer Name,Lecturer Role,Modules Teaching This Semester,Number of Students,All Modules Taught");
     writer.newLine();
@@ -108,7 +113,7 @@ private void writeLecturerCSV(String reportContent, BufferedWriter writer) throw
     writer.newLine();
 }
 
-private void writeStudentCSV(String reportContent, BufferedWriter writer) throws IOException {
+  private void writeStudentCSV(String reportContent, BufferedWriter writer) throws IOException {
     // Write CSV header for student report
     writer.write("Student Name,Student Number,Program,Enrolled Modules,Completed Modules,Modules to Repeat");
     writer.newLine();
@@ -157,7 +162,8 @@ private void writeStudentCSV(String reportContent, BufferedWriter writer) throws
     writer.write(studentName + "," + studentNumber + "," + program + "," + enrolledModules + "," + completedModules + "," + modulesToRepeat);
     writer.newLine();
 }
-private void writeCourseCSV(String reportContent, BufferedWriter writer) throws IOException {
+
+  private void writeCourseCSV(String reportContent, BufferedWriter writer) throws IOException {
     // Write CSV header for course report
     writer.write("Module Name,Program,Students Enrolled,Lecturer,Room");
     writer.newLine();
@@ -184,6 +190,7 @@ private void writeCourseCSV(String reportContent, BufferedWriter writer) throws 
         }
     }
 }
+
 }
 
 

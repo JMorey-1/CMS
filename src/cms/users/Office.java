@@ -1,6 +1,9 @@
 
-package cms;
+package cms.users;
 
+import cms.DatabaseConnection;
+import cms.FileOutput;
+import cms.ReportCreator;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

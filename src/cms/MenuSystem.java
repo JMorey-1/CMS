@@ -1,5 +1,8 @@
 package cms;
 
+import cms.users.Office;
+import cms.users.Lecturer;
+import cms.users.Admin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -198,7 +201,7 @@ public void processLogin() {
                 System.out.print("Enter password for lecturer: ");
                 String lecturerPassword = scanner.next();
                 System.out.print("Enter lecturer ID: ");
-                System.out.println("(For Sams eyes only: Number between 1 and 100)");
+                System.out.println("(For Sams eyes only: Lecturer ID is number between 1 and 100)");
                 int lecturerId = scanner.nextInt();
                 admin.createLecturerUser(lecturerUsername, lecturerPassword, lecturerId);
                 break;
@@ -252,7 +255,7 @@ public void processLogin() {
                 default:
                 System.out.println("Invalid choice. Please try again.");
             }
-        } while (choice != 8);
+        } while (choice != 9);
     }
 
 
@@ -297,14 +300,14 @@ public void runOfficeUserMenu() {
                 break;
             case 4:
                 System.out.print("Enter student ID: ");
-                System.out.println("(For Sams eyes only: Number between 1 and 300)");
+                System.out.println("(For Sams eyes only: Student ID is a number between 1 and 300)");
                 int studentId = scanner.nextInt();
                 String studentReport = office.generateStudentReport(studentId); // Generate the student report
                 chooseReportOutputFormat(studentReport, "student_report", "student"); // Output the report
                 break;
             case 5:
                 System.out.print("Enter lecturer ID: ");
-                System.out.println("(For Sams eyes only: Number between 1 and 100)");
+                System.out.println("(For Sams eyes only: Lecturer ID is a number between 1 and 100)");
                 int lecturerId = scanner.nextInt();
                 String lecturerReport = office.generateLecturerReport(lecturerId); // Generate the lecturer report
                 chooseReportOutputFormat(lecturerReport, "lecturer_report", "lecturer"); // Output the report
@@ -319,8 +322,7 @@ public void runOfficeUserMenu() {
 }
 
     // Display office user menu
-    public void displayOfficeUserMenu() {
-      
+    public void displayOfficeUserMenu() {  
     System.out.println("Office User Menu:");
     System.out.println("");
     System.out.println("1. Change Own Username");
